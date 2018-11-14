@@ -2,7 +2,7 @@ FROM alpine/git as clone
 WORKDIR /app
 RUN git clone https://github.com/fefrik/homework.git
 
-FROM maven:3.5.2-jdk-8-alpine as build 
+FROM jamesdbloom/docker-java8-maven as build
 WORKDIR /app
 COPY --from=clone /app/homework /app 
 RUN mvn install
