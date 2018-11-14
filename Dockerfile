@@ -11,4 +11,5 @@ FROM openjdk:8-jre-alpine
 WORKDIR /app
 COPY --from=build /app/target/homework-1.0.0.jar /app
 EXPOSE 8000
+ENTRYPOINT ["sh", "-c"]
 CMD ["java -jar homework-1.0.0.jar"]
